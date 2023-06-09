@@ -1,13 +1,128 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+:root {
+	--tropical-indigo-pale: #e5def7;
+	--tropical-indigo: #9376e0;
+	--tropical-indigo-vibrant: #562dc8;
+	--tropical-indigo-dark: #4826a6;
+
+	--plum: #e893cf;
+	--plum-vibrant: #d846ac;
+
+	--orchid-pink: #f3bcc8;
+	--orchid-pink-vibrant: #d0254a;
+	--mindaro: #f6ffa6;
+	--vanilla: #fff7ae;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "PT Sans", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+.form-input {
+	margin: 10px auto;
+
+	& > div {
+		display: flex;
+
+		& > label {
+			flex-grow: 1;
+		}
+	}
+
+	& input {
+		border: 2px rgba(220, 220, 220, 0.5) solid;
+		padding: 10px 20px;
+		border-radius: 20px;
+		width: 100%;
+		margin-top: 5px;
+		margin-bottom: 10px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	& input[type="submit"] {
+		border: none;
+	}
+
+	& .form-error-message {
+		font-size: small;
+		color: red;
+	}
+}
+
+.sidenav-layout {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background-color: var(--tropical-indigo-pale);
+
+	& .sidenav {
+		padding-top: 10px;
+		padding-left: 10px;
+		flex-grow: 0;
+	}
+
+	& h1 {
+		padding-left: 20px;
+		margin: 30px auto;
+	}
+
+	& ul {
+		list-style: none;
+		& li {
+			padding-right: 10px;
+			margin: 10px 0;
+			height: 60px;
+			& a {
+				text-decoration: none;
+				color: black;
+				height: 60px;
+				line-height: 60px;
+				border-radius: 10px;
+				padding: 0px 10px 0 15px;
+				display: inline-block;
+				align-items: center;
+				width: 100%;
+				font-size: large;
+				&:hover {
+					background-color: color-mix(
+						in srgb,
+						var(--tropical-indigo),
+						var(--tropical-indigo-pale)
+					);
+				}
+			}
+		}
+	}
+
+	& .sidenav-icon {
+		width: 28px;
+		height: 28px;
+		transform: translate(0px, 5px);
+		margin-right: 15px;
+	}
+}
+
+#UIBlocker {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: white;
 }
